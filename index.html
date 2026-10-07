@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dmitry Rudshin · AI Engineer</title>
+    <meta
+      name="description"
+      content="Dmitry Rudshin is an AI engineer and MSc Computer Science student at the University of Zurich and ETH Zurich, building agentic AI systems, speech pipelines, 3D vision and robot world models."
+    />
+    <meta name="author" content="Dmitry Rudshin" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0b0c0e" />
+    <link rel="canonical" href="https://dmitrygm1.github.io/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Dmitry Rudshin" />
+    <meta property="og:url" content="https://dmitrygm1.github.io/" />
+    <meta property="og:title" content="Dmitry Rudshin · AI Engineer" />
+    <meta
+      property="og:description"
+      content="Agentic AI, speech, 3D vision and robot world models. MSc Computer Science at the University of Zurich and ETH Zurich."
+    />
+    <meta property="og:image" content="https://dmitrygm1.github.io/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Dmitry Rudshin · AI Engineer" />
+    <meta property="profile:first_name" content="Dmitry" />
+    <meta property="profile:last_name" content="Rudshin" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dmitry Rudshin · AI Engineer" />
+    <meta name="twitter:image" content="https://dmitrygm1.github.io/og.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap"
+    />
+
+    <!-- Theme before paint: dark unless the visitor picked light. -->
+    <script>
+      (function () {
+        var root = document.documentElement;
+        root.classList.add("js");
+        var light = false;
+        try {
+          light = localStorage.getItem("dr-theme") === "light";
+        } catch (e) {}
+        if (!light) root.dataset.theme = "dark";
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dmitry Rudshin",
+        "url": "https://dmitrygm1.github.io/",
+        "email": "mailto:dmitry.rudshin@gmail.com",
+        "jobTitle": "AI Engineer",
+        "sameAs": ["https://www.linkedin.com/in/dmitry-rudshin", "https://github.com/Dmitrygm1"],
+        "affiliation": [
+          { "@type": "CollegeOrUniversity", "name": "University of Zurich" },
+          { "@type": "CollegeOrUniversity", "name": "ETH Zurich" }
+        ],
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Eindhoven University of Technology" },
+        "knowsAbout": ["Agentic AI", "Retrieval-augmented generation", "Speech processing", "World models", "Robot learning", "Computer vision", "3D vision"],
+        "knowsLanguage": ["English", "Norwegian", "Russian", "German", "Dutch", "Spanish"]
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/home-Czyv4Zl3.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/pareto-D0q48_XX.js">
+    <link rel="stylesheet" crossorigin href="/assets/home-0fD5lj1x.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="Dmitry Rudshin, back to top">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="brand-gradient" x1="6" y1="4" x2="58" y2="62" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1f9d2b"/><stop offset="0.45" stop-color="#32cd32"/><stop offset="1" stop-color="#7ef05a"/></linearGradient></defs><rect width="64" height="64" rx="17" fill="url(#brand-gradient)"/><path d="M12.26 45.11Q11.74 45.11 11.74 44.74Q11.74 44.33 12.48 44.22L13.22 44.11Q14.03 44 14.34 43.73Q14.66 43.45 14.8 42.67L19.82 20.99Q20 20.22 19.82 19.96Q19.63 19.7 18.9 19.56L18.16 19.41Q17.68 19.3 17.68 19Q17.68 18.56 18.34 18.56H25.76Q28.93 18.56 30.79 20.9Q32.65 23.24 32.65 27.85Q32.65 31.24 31.58 34.36Q30.51 37.48 28.71 39.89Q26.9 42.31 24.59 43.71Q22.29 45.11 19.78 45.11ZM19.97 44.15Q22.07 44.15 23.91 42.6Q25.76 41.05 27.16 38.38Q28.56 35.71 29.35 32.35Q30.14 28.99 30.14 25.42Q30.14 22.47 28.93 20.99Q27.71 19.52 25.53 19.52Q22.77 19.52 22.14 22.21L17.72 41.46Q17.39 42.93 17.99 43.54Q18.6 44.15 19.97 44.15ZM46.55 45.44Q45 45.44 44.03 44.33Q43.05 43.23 43.09 41.24L43.12 37.14Q43.16 35.15 42.9 34.12Q42.64 33.09 41.94 32.72Q41.24 32.35 39.88 32.35Q39.07 32.35 38.68 32.65Q38.29 32.94 38.14 33.57L36.01 42.53Q35.82 43.3 36.04 43.6Q36.26 43.89 37.19 44.04L38.81 44.26Q39.32 44.3 39.32 44.67Q39.32 45.11 38.73 45.11H30.92Q30.4 45.11 30.4 44.74Q30.4 44.33 31.14 44.22L31.88 44.11Q32.69 44 33 43.73Q33.31 43.45 33.46 42.67L38.48 20.99Q38.66 20.22 38.48 19.96Q38.29 19.7 37.55 19.56L36.82 19.41Q36.34 19.3 36.34 19Q36.34 18.56 37 18.56H44.49Q46.66 18.56 48.1 19.33Q49.54 20.11 50.26 21.4Q50.98 22.69 50.98 24.24Q50.98 26.19 49.98 27.78Q48.99 29.36 47.38 30.45Q45.78 31.54 43.93 32.06Q43.71 32.09 43.69 32.26Q43.68 32.42 43.9 32.53Q44.93 33.09 45.3 34.08Q45.67 35.08 45.67 36.74V40.5Q45.67 42.53 46.11 43.28Q46.55 44.04 47.33 44.04Q47.62 44.04 47.84 43.95Q48.06 43.85 48.43 43.6Q48.73 43.34 48.97 43.45Q49.21 43.56 49.21 43.85Q49.21 44.37 48.43 44.91Q47.66 45.44 46.55 45.44ZM41.17 31.43Q43.01 31.43 44.63 30.43Q46.26 29.44 47.27 27.74Q48.28 26.05 48.28 23.94Q48.28 21.88 47.27 20.68Q46.26 19.48 43.75 19.48Q41.39 19.48 41.02 20.96L39.07 29.4Q38.59 31.43 41.17 31.43Z" fill="#0b0c0e"/></svg>
+          <span class="brand-name">Dmitry Rudshin</span>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#work">Work</a>
+          <a href="#model-space">Model Space</a>
+          <a href="#moments">Moments</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch colour theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.2" />
+              <path d="M12 2.5v2.2M12 19.3v2.2M4.7 4.7l1.6 1.6M17.7 17.7l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.7 19.3l1.6-1.6M17.7 6.3l1.6-1.6" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.2 14.6A8.5 8.5 0 0 1 9.4 3.8a8.5 8.5 0 1 0 10.8 10.8Z" />
+            </svg>
+          </button>
+          <button class="icon-button menu-toggle" type="button" data-menu-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ───────────────────────── Hero ───────────────────────── -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="hero-kicker reveal">
+              <span class="pulse" aria-hidden="true"></span>
+              <span>Zurich, Switzerland</span> <span class="sep" aria-hidden="true">/</span> <span>MSc AI · UZH , ETH Zurich</span>
+            </p>
+            <h1 class="hero-title reveal" id="hero-title">
+              <span>Dmitry</span>
+              <span><em>Rudshin</em></span>
+            </h1>
+            <p class="hero-lede reveal">
+              AI engineer building agentic systems, speech pipelines and
+              world models, and taking them from research code to people who use them.
+            </p>
+            <div class="hero-actions reveal">
+              <a class="button button-primary" href="#work">
+                Selected work
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5" /></svg>
+              </a>
+              <a class="button button-ghost" href="/model-space/">
+                Launch Model Space
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg>
+              </a>
+            </div>
+            <ul class="hero-links reveal" aria-label="Profiles">
+              <li>
+                <a href="https://github.com/Dmitrygm1" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z" /></svg>
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/dmitry-rudshin" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" /></svg>
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="mailto:dmitry.rudshin@gmail.com">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="stroke"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5" /><path d="m3.5 6.5 8.5 6.5 8.5-6.5" /></svg>
+                  Email
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <figure class="cloud-figure reveal" aria-label="Interactive point cloud">
+            <div class="viewport" data-viewport title="Drag to orbit">
+              <canvas data-pointcloud aria-hidden="true"></canvas>
+              <span class="corner tl" aria-hidden="true"></span>
+              <span class="corner tr" aria-hidden="true"></span>
+              <span class="corner bl" aria-hidden="true"></span>
+              <span class="corner br" aria-hidden="true"></span>
+              <div class="viewport-hud top" aria-hidden="true">
+                <span></span>
+                <span></span>
+              </div>
+              <div class="viewport-hud bottom" aria-hidden="true">
+                <span>az <b data-readout-az>000.0°</b></span>
+                <span>el <b data-readout-el>00.0°</b></span>
+                <span><b data-readout-n>0</b> pts</span>
+              </div>
+            </div>
+            <figcaption>Drag to orbit. Just a cool point cloud thingy</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── About ───────────────────────── -->
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="container section-grid">
+          <header class="section-label reveal">
+            <span class="section-index">01</span>
+            <h2 id="about-title">About</h2>
+          </header>
+
+          <div class="section-body">
+            <div class="about-lead">
+              <div class="about-intro reveal">
+                <p class="big-text">
+                  I'm a Master's student in Computer Science at the <strong>University of Zurich</strong>, majoring in
+                  Artificial Intelligence, and a special student at <strong>ETH Zurich</strong>.
+                </p>
+                <p>
+                  Most of my work sits where machine learning meets real deployment. I've shipped an LLM interviewer for a
+                  nationwide research study in Norway, co-authored a multimodal speech copilot published at SwissText 2026,
+                  and trained a video world model on robot data I collected myself. I like systems that are measurable,
+                  reproducible and useful, and I treat evaluation as part of the system rather than an afterthought.
+                </p>
+              </div>
+              <figure class="portrait reveal">
+                <img src="/images/photos/portrait.webp" width="720" height="720" decoding="async" alt="Dmitry Rudshin smiling by a harbour on a sunny day" />
+              </figure>
+            </div>
+
+            <div class="about-columns">
+              <div class="panel reveal">
+                <h3 class="panel-title">Education</h3>
+                <ol class="edu-list">
+                  <li>
+                    <div class="edu-head">
+                      <strong>University of Zurich</strong>
+                      <span class="mono">Sep 2025 — now</span>
+                    </div>
+                    <p>MSc Computer Science (Informatik RVO22). Major in Artificial Intelligence, minor in Informatics.</p>
+                  </li>
+                  <li>
+                    <div class="edu-head">
+                      <strong>ETH Zurich</strong>
+                      <span class="mono">Sep 2025 — now</span>
+                    </div>
+                    <p>Special student. Probabilistic Artificial Intelligence, Introduction to Machine Learning, Robot Learning, 3D Vision.</p>
+                  </li>
+                  <li>
+                    <div class="edu-head">
+                      <strong>Eindhoven University of Technology</strong>
+                      <span class="mono">2021 — 2025</span>
+                    </div>
+                    <p>BSc Computer Science and Engineering. Machine learning, algorithms and software engineering.</p>
+                  </li>
+                </ol>
+              </div>
+
+              <div class="panel reveal">
+                <h3 class="panel-title">Languages</h3>
+                <ul class="lang-list">
+                  <li><span>English</span><span class="level" data-level="3" aria-label="Fluent"><i></i><i></i><i></i></span><em>Fluent</em></li>
+                  <li><span>Norwegian</span><span class="level" data-level="3" aria-label="Fluent"><i></i><i></i><i></i></span><em>Fluent</em></li>
+                  <li><span>Russian</span><span class="level" data-level="3" aria-label="Fluent"><i></i><i></i><i></i></span><em>Fluent</em></li>
+                  <li><span>German</span><span class="level" data-level="2" aria-label="Intermediate"><i></i><i></i><i></i></span><em>Intermediate</em></li>
+                  <li><span>Dutch</span><span class="level" data-level="1" aria-label="Basic"><i></i><i></i><i></i></span><em>Basic</em></li>
+                  <li><span>Spanish</span><span class="level" data-level="1" aria-label="Basic"><i></i><i></i><i></i></span><em>Basic</em></li>
+                </ul>
+                <p class="panel-note">Studied in the Netherlands and Switzerland, and worked with the University of Stavanger in Norway.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── Experience ───────────────────────── -->
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <div class="container section-grid">
+          <header class="section-label reveal">
+            <span class="section-index">02</span>
+            <h2 id="experience-title">Experience</h2>
+          </header>
+
+          <div class="section-body">
+            <ol class="timeline">
+              <li class="role reveal">
+                <div class="role-meta">
+                  <span class="mono">Sep 2025 — Jun 2026</span>
+                  <span class="role-place">Stavanger, Norway</span>
+                </div>
+                <div class="role-body">
+                  <h3>Agentic AI Research Engineer</h3>
+                  <p class="role-org">University of Stavanger</p>
+                  <ul>
+                    <li>
+                      Adapted and deployed an LLM-based agentic interview system for a nationwide research study targeting
+                      ~70,000 Norwegian SMEs, automating qualitative data collection for 1,000+ expected respondents.
+                    </li>
+                    <li>
+                      Upgraded the model stack, tuned agent parameters, integrated Qualtrics, and deployed a VM architecture
+                      that supports ~150 concurrent interview sessions, with batch scheduling to hold capacity under load.
+                    </li>
+                  </ul>
+                  <ul class="tags" aria-label="Technologies">
+                    <li>LLM agents</li><li>Python</li><li>Qualtrics</li><li>Docker</li><li>VM infrastructure</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="role reveal">
+                <div class="role-meta">
+                  <span class="mono">Jan 2025 — Apr 2025</span>
+                  <span class="role-place">Stavanger, Norway</span>
+                </div>
+                <div class="role-body">
+                  <h3>AI Chatbot Developer</h3>
+                  <p class="role-org">University of Stavanger</p>
+                  <ul>
+                    <li>Engineered a Python, FastAPI and LangChain RAG assistant grounded in embedded course content.</li>
+                    <li>
+                      Built a JavaScript and REST chat widget with RAG validation that exposes knowledge gaps and guards
+                      against hallucinated answers.
+                    </li>
+                  </ul>
+                  <ul class="tags" aria-label="Technologies">
+                    <li>RAG</li><li>LangChain</li><li>FastAPI</li><li>JavaScript</li><li>REST</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── Work ───────────────────────── -->
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="container">
+          <div class="section-grid section-grid-head">
+            <header class="section-label reveal">
+              <span class="section-index">03</span>
+              <h2 id="work-title">Selected work</h2>
+            </header>
+            <p class="section-intro reveal">
+              Research systems, course projects and challenges, from speech and language to robots and 3D reconstruction.
+              <a class="text-link" href="#model-space">Model Space</a> gets its own section below.
+            </p>
+          </div>
+
+          <div class="project-grid">
+            <!-- Video World Model (featured) -->
+            <article class="project project-featured reveal" aria-labelledby="p-worldmodel">
+              <figure class="project-media media-wide">
+                <video
+                  class="media-video"
+                  muted
+                  loop
+                  playsinline
+                  preload="none"
+                  poster="/images/photos/world-model-poster.webp"
+                  aria-label="World model plan beside the real robot, 8× speed"
+                >
+                  <source src="/media/world-model-plan-vs-action.mp4" type="video/mp4" />
+                </video>
+                <span class="media-tag accent tag-left" aria-hidden="true">World model plan</span>
+                <span class="media-tag tag-right" aria-hidden="true">Real SO-101 robot</span>
+                <span class="media-divider" aria-hidden="true"></span>
+                <button class="media-toggle" type="button" data-video-toggle aria-label="Pause video">
+                  <svg class="icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9M11 3.5v9" /></svg>
+                  <svg class="icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.2v9.6L12.5 8Z" /></svg>
+                </button>
+                <figcaption class="sr-only">
+                  Left: the video world model's predicted frames. Right: the real SO-101 arm pushing a white polyhedron around a
+                  red cylinder obstacle into the goal circle. Clip sped up 8×.
+                </figcaption>
+              </figure>
+              <div class="project-body">
+                <div class="featured-main">
+                  <p class="project-meta"><span>Robot Learning · ETH Zurich</span><span>Spring 2026 · clip at 8× speed</span></p>
+                  <h3 id="p-worldmodel">Pushing with a Video World Model</h3>
+                  <p>
+                    A LeRobot SO-101 arm pushes objects into goal circles, around an obstacle and with unseen objects,
+                    guided by one workspace camera and a task prompt. A Cosmos-Predict 2 Video2World model, fine-tuned
+                    with LoRA on our demonstrations, imagines the next frames, and an action decoder reads that plan to
+                    produce joint commands. A GPU server replans after every chunk. We collected 900 pushing episodes and
+                    trained on H100 GPUs.
+                  </p>
+                  <p>
+                    Our world model performed best among the course teams, and we demonstrated the robot to Yann LeCun,
+                    Vladlen Koltun and Jitendra Malik at the Vision and Robotics for Embodied AI conference.
+                  </p>
+                </div>
+                <div class="featured-side">
+                  <dl class="project-stats">
+                    <div><dt>Episodes collected</dt><dd>900</dd></div>
+                    <div><dt>Action chunks</dt><dd>15 steps</dd></div>
+                    <div><dt>Result</dt><dd>Best world model in course</dd></div>
+                  </dl>
+                  <ul class="tags" aria-label="Technologies">
+                    <li>Cosmos-Predict 2</li><li>LeRobot</li><li>SO-101</li><li>PyTorch</li><li>FastAPI</li>
+                  </ul>
+                  <div class="project-links">
+                    <a href="#moments">Demo photos <span aria-hidden="true">↓</span></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Call Support Copilot -->
+            <article class="project reveal" aria-labelledby="p-copilot">
+              <figure class="project-media">
+                <img
+                  src="/images/photos/copilot-dashboard.webp"
+                  width="1020"
+                  height="612"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Call Support Copilot dashboard analysing an uploaded call: the caller's emotion is classified as fearful, with valence, arousal and dominance scores"
+                />
+                <figcaption class="media-tag">Dashboard · demo call</figcaption>
+              </figure>
+              <div class="project-body">
+                <p class="project-meta"><span>SwissText 2026 · ACL Anthology</span><span>UZH</span></p>
+                <h3 id="p-copilot">Call Support Copilot</h3>
+                <p>
+                  A reproducible multimodal assistant for customer-support agents. Upload a call and it transcribes with
+                  Whisper, translates, tracks speech emotion over time, classifies intent with a fine-tuned DistilBERT,
+                  retrieves the client record and suggests next actions. I built the end-to-end Python system and
+                  co-authored and presented the paper.
+                </p>
+                <dl class="project-stats">
+                  <div><dt>WER</dt><dd>6.6%</dd></div>
+                  <div><dt>Intent accuracy</dt><dd>87.0%</dd></div>
+                  <div><dt>Real-time factor</dt><dd>0.67–0.71</dd></div>
+                </dl>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Whisper</li><li>DistilBERT</li><li>Speech emotion</li><li>Streamlit</li><li>SQLite</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://aclanthology.org/2026.swisstext-1.6/" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a>
+                  <a href="https://github.com/Dmitrygm1/ETSP-Project" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3D reconstruction -->
+            <article class="project reveal" aria-labelledby="p-slam">
+              <figure class="project-media">
+                <img
+                  src="/images/photos/reconstruction-eval.webp"
+                  width="1250"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Construction-site floor plan with two almost identical camera trajectories: the estimated path from the Depth Anything 3 pipeline in purple lying on top of the ground truth in green"
+                />
+                <figcaption class="media-tag">Best run · estimate (purple) on ground truth (green)</figcaption>
+              </figure>
+              <div class="project-body">
+                <p class="project-meta"><span>3D Vision · ETH Zurich × Hilti</span><span>2026</span></p>
+                <h3 id="p-slam">3D Reconstruction of Construction Sites</h3>
+                <p>
+                  A team project on Hilti–Trimble SLAM Challenge 2026 data: rebuild active construction-site floors from
+                  sparse, noisy 360° helmet-camera walkthroughs. We split each panorama into pinhole views. VGGT-SLAM broke
+                  down on this data, so the final pipeline used streaming Depth Anything 3, aligned to the floor plans. I
+                  built the reproducible VGGT-SLAM runner (input prep, GPU launches, point-cloud export, reports) and the
+                  ground-truth evaluation and reporting for the final runs.
+                </p>
+                <dl class="project-stats">
+                  <div><dt>Best-run XY error</dt><dd>0.19 m</dd></div>
+                  <div><dt>Mean over 5 runs</dt><dd>1.08 m</dd></div>
+                  <div><dt>Input</dt><dd>360° video</dd></div>
+                </dl>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Depth Anything 3</li><li>VGGT-SLAM</li><li>Evaluation</li><li>ROS 2</li><li>Slurm</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://github.com/TangentH/da3-hilti" target="_blank" rel="noopener">Team pipeline <span aria-hidden="true">↗</span></a>
+                  <a href="https://github.com/Dmitrygm1/hilti-vggt-runner" target="_blank" rel="noopener">My VGGT-SLAM runner <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- IBM watsonx -->
+            <article class="project reveal" aria-labelledby="p-watsonx">
+              <figure class="project-media">
+                <img
+                  src="/images/photos/watsonx-agent.webp"
+                  width="1400"
+                  height="840"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Demo chat interface of the Skill Gap Profiler agent greeting the user: Hey! My name is Emma and I'll build your skill profile. Tell me, what kind of work do you do?"
+                />
+                <figcaption class="media-tag">Agent demo UI</figcaption>
+              </figure>
+              <div class="project-body">
+                <p class="project-meta"><span>IBM watsonx Agentic AI Challenge</span><span>getAbstract · 2026</span></p>
+                <h3 id="p-watsonx">Skill-Gap Profiler Agent</h3>
+                <p>
+                  From conversation to a validated skill-gap profile. Our watsonx Orchestrate agent interviews a learner,
+                  matches them to role and skill benchmarks, scores evidence with deterministic tool calls during the chat,
+                  and hands off a structured JSON profile only once a validation gate passes. Team of four; I worked on
+                  agent development and presented the architecture.
+                </p>
+                <dl class="project-stats">
+                  <div><dt>Role matched</dt><dd>12 / 13 runs</dd></div>
+                  <div><dt>Gaps surfaced</dt><dd>11 / 13</dd></div>
+                  <div><dt>Complete handoffs</dt><dd>11 / 13</dd></div>
+                </dl>
+                <ul class="tags" aria-label="Technologies">
+                  <li>watsonx Orchestrate</li><li>Tool calling</li><li>Python</li><li>Validation gates</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- AI Interviewer -->
+            <article class="project reveal" aria-labelledby="p-interviews">
+              <figure class="project-media">
+                <img
+                  src="/images/photos/interviewer-ui.webp"
+                  width="1200"
+                  height="715"
+                  loading="lazy"
+                  decoding="async"
+                  alt="The AI interviewer's chat window in Norwegian, opening with the question: Can you describe your most important work tasks? Below it are an answer box and buttons to record or send the answer"
+                />
+                <figcaption class="media-tag tag-top-right">Study interface · Norwegian</figcaption>
+              </figure>
+              <div class="project-body">
+                <p class="project-meta"><span>University of Stavanger</span><span>2025–2026</span></p>
+                <h3 id="p-interviews">AI Interviewer at National Scale</h3>
+                <p>
+                  An adaptation of Chopra &amp; Haaland's <em>Conducting Qualitative Interviews with AI</em> for a
+                  nationwide study of Norwegian SMEs. It adds Norwegian interview flows, an upgraded model stack, Qualtrics
+                  integration and a VM deployment with batch scheduling that keeps ~150 interviews running at once.
+                </p>
+                <dl class="project-stats">
+                  <div><dt>Target firms</dt><dd>~70,000</dd></div>
+                  <div><dt>Expected respondents</dt><dd>1,000+</dd></div>
+                  <div><dt>Concurrency</dt><dd>~150</dd></div>
+                </dl>
+                <ul class="tags" aria-label="Technologies">
+                  <li>LLM agents</li><li>Flask</li><li>Qualtrics</li><li>Docker</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://github.com/Dmitrygm1/interviews-UiS" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+                  <a href="https://dx.doi.org/10.2139/ssrn.4583756" target="_blank" rel="noopener">Original paper <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PeerBot -->
+            <article class="project project-row reveal" aria-labelledby="p-peerbot">
+              <div class="project-art" aria-hidden="true">
+                <svg viewBox="0 0 400 240" class="art art-memory">
+                  <g class="stack">
+                    <rect x="36" y="140" width="130" height="30" rx="6" />
+                    <rect x="36" y="104" width="130" height="30" rx="6" />
+                    <rect x="36" y="68" width="130" height="30" rx="6" class="hot" />
+                    <text x="50" y="88">goals</text><text x="50" y="124">activity</text><text x="50" y="160">chat history</text>
+                  </g>
+                  <path class="link" d="M166 120c40 0 44-40 84-40" />
+                  <g class="bubbles">
+                    <rect x="250" y="56" width="126" height="48" rx="14" class="a" />
+                    <rect x="266" y="118" width="110" height="30" rx="12" class="q" />
+                    <text x="264" y="78">Nice streak this</text><text x="264" y="94">week. Next step?</text>
+                    <text x="280" y="137" class="reply">Plan my week</text>
+                  </g>
+                  <text class="labels-text" x="36" y="206">long-term memory → personalised coaching</text>
+                </svg>
+              </div>
+              <div class="project-body">
+                <p class="project-meta"><span>Bachelor's End Project · TU/e</span><span>Grade 9/10</span></p>
+                <h3 id="p-peerbot">PeerBot, an AI Coaching Assistant</h3>
+                <p>
+                  A LangChain assistant with long-term memory for client company Peercode, personalising coaching from
+                  users' activity and chat data. I also co-authored the requirements, software design and acceptance-testing
+                  documents that kept the team aligned with the client.
+                </p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>LangChain</li><li>Long-term memory</li><li>Python</li><li>Requirements engineering</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <p class="more-link reveal">
+            <a class="button button-ghost" href="https://github.com/Dmitrygm1?tab=repositories" target="_blank" rel="noopener">
+              More on GitHub
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── Model Space ───────────────────────── -->
+      <section class="feature" id="model-space" aria-labelledby="ms-title">
+        <div class="container">
+          <div class="feature-grid">
+            <div class="feature-copy">
+              <p class="feature-kicker reveal"><span class="section-index">04</span> Featured build · 2026</p>
+              <h2 class="feature-title reveal" id="ms-title">Model&nbsp;Space</h2>
+              <p class="feature-lede reveal">
+                An interactive 3D map of the AI frontier. Every model from the Artificial Analysis Intelligence Index,
+                placed by <strong>intelligence</strong>, <strong>cost per task</strong> and <strong>time per task</strong>,
+                with the Pareto frontier stretched between the models nothing else beats.
+              </p>
+              <dl class="feature-stats reveal">
+                <div><dd data-ms-models>93</dd><dt>models plotted</dt></div>
+                <div><dd data-ms-frontier>30</dd><dt>on the frontier</dt></div>
+                <div><dd data-ms-labs>23</dd><dt>labs</dt></div>
+              </dl>
+              <ul class="feature-list reveal">
+                <li><strong>Attainment staircase.</strong> For every cost and time budget, the best intelligence reachable within both.</li>
+                <li><strong>Dominance boxes.</strong> Select a model to shade every combination it beats.</li>
+                <li><strong>Temperature view.</strong> A ray-marched GLSL field that warms toward the cheap, fast, smart corner.</li>
+                <li><strong>One-command refresh.</strong> A script re-reads the live leaderboard and rewrites the snapshot.</li>
+              </ul>
+              <div class="feature-actions reveal">
+                <a class="button button-accent" href="/model-space/">
+                  Launch Model Space
+                  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg>
+                </a>
+                <p class="mono feature-foot" data-ms-snapshot>Intelligence Index v4.3 · snapshot Sep 7, 2026</p>
+              </div>
+            </div>
+
+            <a class="feature-shot reveal" href="/model-space/" aria-label="Open Model Space">
+              <div class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <i></i><i></i><i></i>
+                  <span>dmitrygm1.github.io/model-space</span>
+                </div>
+                <img
+                  class="shot-light"
+                  src="/images/model-space-light.webp"
+                  width="1600"
+                  height="1000"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Model Space showing AI models as points in a 3D cube with a gold frontier staircase"
+                />
+                <img
+                  class="shot-dark"
+                  src="/images/model-space-dark.webp"
+                  width="1600"
+                  height="1000"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Model Space in dark mode showing AI models as points in a 3D cube with a frontier staircase"
+                />
+              </div>
+              <span class="shot-cta" aria-hidden="true">Open the live app ↗</span>
+            </a>
+          </div>
+          <ul class="tags feature-tags reveal" aria-label="Technologies">
+            <li>React Three Fiber</li><li>three.js</li><li>GLSL</li><li>TypeScript</li><li>Pareto analysis</li><li>Vite</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── Moments ───────────────────────── -->
+      <section class="section" id="moments" aria-labelledby="moments-title">
+        <div class="container">
+          <div class="section-grid section-grid-head">
+            <header class="section-label reveal">
+              <span class="section-index">05</span>
+              <h2 id="moments-title">Moments</h2>
+            </header>
+            <p class="section-intro reveal">
+              Demos, conferences and hackathons: the robot on show in Zurich, and a few things built against the clock.
+            </p>
+          </div>
+
+          <div class="moments-grid">
+            <figure class="moment reveal" style="--ratio: 4 / 5">
+              <div class="moment-img">
+                <img
+                  src="/images/photos/lecun.webp"
+                  width="960"
+                  height="1200"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Dmitry Rudshin with Yann LeCun at the Vision and Robotics for Embodied AI conference"
+                />
+              </div>
+              <figcaption>
+                <span class="mono">Vision &amp; Robotics for Embodied AI · 2026</span>
+                <strong>With Yann LeCun</strong>
+                <span>At the conference where we demonstrated our world-model robot.</span>
+              </figcaption>
+            </figure>
+
+            <figure class="moment wide reveal" style="--ratio: 1.64">
+              <div class="moment-img">
+                <img
+                  src="/images/photos/demo-table.webp"
+                  width="1440"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  alt="The SO-101 robot arm at the edge of a dark green mat with painted goal circles, a red cylinder and a white 3D-printed polyhedron, next to a taped camera mast, spare blue and orange cubes and laptops"
+                />
+              </div>
+              <figcaption>
+                <span class="mono">Live demo · Zurich · May 2026</span>
+                <strong>Our SO-101 pushing setup</strong>
+                <span>
+                  The arm, the goal circles and the task objects: a white polyhedron to push and a red cylinder obstacle to
+                  steer around. The camera on the taped mast feeds the world model.
+                </span>
+              </figcaption>
+            </figure>
+
+            <figure class="moment half reveal" style="--ratio: 5 / 3">
+              <div class="moment-img">
+                <img
+                  src="/images/photos/testdata-ai.webp"
+                  width="1300"
+                  height="780"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Dark analytics app answering the question whether maximum force is trending down over time, with a line chart, a trend line and a list of detected data issues"
+                />
+              </div>
+              <figcaption>
+                <span class="mono">Hackathon · ZwickRoell case · March 2026</span>
+                <strong>TestData AI</strong>
+                <span>Ask questions about material-testing data in plain language and get charts, trend checks and data-quality warnings back.</span>
+              </figcaption>
+            </figure>
+
+            <figure class="moment half reveal" style="--ratio: 5 / 3">
+              <div class="moment-img">
+                <img
+                  src="/images/photos/splitsnap.webp"
+                  width="1300"
+                  height="780"
+                  loading="lazy"
+                  decoding="async"
+                  alt="SplitSnap landing page with the headline Split dinner without the group chat math, and a sample restaurant bill"
+                />
+              </div>
+              <figcaption>
+                <span class="mono">IBM Dev Day Hackathon · April 2026</span>
+                <strong>SplitSnap</strong>
+                <span>Scan a receipt, share a link and let everyone pick what they had. A team build.</span>
+              </figcaption>
+            </figure>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── Publications ───────────────────────── -->
+      <section class="section" id="publications" aria-labelledby="pub-title">
+        <div class="container section-grid">
+          <header class="section-label reveal">
+            <span class="section-index">06</span>
+            <h2 id="pub-title">Publications</h2>
+          </header>
+
+          <div class="section-body pub-layout">
+            <article class="publication reveal">
+              <p class="pub-venue mono">SwissText 2026 · Proceedings of the 11th Swiss Text Analytics Conference · pp. 75–81</p>
+              <h3>
+                <a href="https://aclanthology.org/2026.swisstext-1.6/" target="_blank" rel="noopener">
+                  Call Support Copilot: A Reproducible Multimodal System for Speech Emotion Recognition, Intent
+                  Understanding, and Agent Assistance
+                </a>
+              </h3>
+              <p class="pub-authors">Khoshimov Rakhmatillokhon, <strong>Dmitry Rudshin</strong>, Yanyang Luo</p>
+              <p class="pub-where">Zurich, Switzerland · June 2026 · Association for Computational Linguistics</p>
+              <figure class="pub-figure">
+                <img
+                  src="/images/photos/copilot-pipeline.webp"
+                  width="1600"
+                  height="661"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Processing pipeline: audio upload goes to Whisper speech recognition, which feeds speech emotion recognition, machine translation and intent understanding in parallel; their outputs are fused with client records from a SQLite database and shown on the agent dashboard"
+                />
+                <figcaption>Figure 1 of the paper: the processing pipeline.</figcaption>
+              </figure>
+              <div class="pub-actions">
+                <a class="chip-link" href="https://aclanthology.org/2026.swisstext-1.6.pdf" target="_blank" rel="noopener">PDF</a>
+                <a class="chip-link" href="https://aclanthology.org/2026.swisstext-1.6/" target="_blank" rel="noopener">ACL Anthology</a>
+                <a class="chip-link" href="https://github.com/Dmitrygm1/ETSP-Project" target="_blank" rel="noopener">Code</a>
+                <a class="chip-link" href="/images/photos/swisstext-poster.webp" target="_blank" rel="noopener">Poster</a>
+                <button class="chip-link" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bibtex">BibTeX</button>
+              </div>
+              <div class="bibtex" id="bibtex" hidden>
+                <pre><code data-bibtex>@inproceedings{rakhmatillokhon-etal-2026-call,
+    title = "Call Support Copilot: A Reproducible Multimodal System for Speech Emotion Recognition, Intent Understanding, and Agent Assistance",
+    author = "Rakhmatillokhon, Khoshimov and Rudshin, Dmitry and Luo, Yanyang",
+    booktitle = "Proceedings of the 11th Edition of the {S}wiss Text Analytics Conference",
+    month = jun,
+    year = "2026",
+    address = "Zurich, Switzerland",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.swisstext-1.6/",
+    pages = "75--81"
+}</code></pre>
+                <button class="copy-button" type="button" data-copy-target="[data-bibtex]">Copy</button>
+              </div>
+            </article>
+            <figure class="pub-photo reveal">
+              <img
+                src="/images/photos/swisstext-presenting.webp"
+                width="960"
+                height="1280"
+                loading="lazy"
+                decoding="async"
+                alt="Dmitry Rudshin smiling and giving a thumbs up next to the printed Call Support Copilot poster at SwissText 2026"
+              />
+              <figcaption class="media-tag accent">Presenting at SwissText 2026</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── Toolbox ───────────────────────── -->
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="container section-grid">
+          <header class="section-label reveal">
+            <span class="section-index">07</span>
+            <h2 id="skills-title">Toolbox</h2>
+          </header>
+
+          <div class="section-body skills-grid">
+            <div class="skill-group reveal">
+              <h3>Machine learning</h3>
+              <ul class="tags tags-lg">
+                <li>Agentic AI</li><li>RAG</li><li>World models</li><li>Robot learning</li><li>Computer vision</li>
+                <li>3D vision</li><li>Speech &amp; NLP</li><li>Evaluation</li><li>Data analysis</li>
+              </ul>
+            </div>
+            <div class="skill-group reveal">
+              <h3>Languages &amp; frameworks</h3>
+              <ul class="tags tags-lg">
+                <li>Python</li><li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>FastAPI</li><li>LangChain</li>
+                <li>TypeScript</li><li>React</li><li>three.js</li><li>Java</li><li>C++</li>
+              </ul>
+            </div>
+            <div class="skill-group reveal">
+              <h3>Infrastructure &amp; tools</h3>
+              <ul class="tags tags-lg">
+                <li>Docker</li><li>Linux / WSL</li><li>Slurm clusters</li><li>GitHub</li><li>Jupyter</li>
+                <li>IBM watsonx Orchestrate</li><li>Qualtrics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── Contact ───────────────────────── -->
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <p class="contact-kicker reveal"><span class="section-index">08</span> Contact</p>
+          <h2 class="contact-title reveal" id="contact-title">Let’s talk about <em>AI that ships.</em></h2>
+          <p class="contact-lede reveal">
+            For research collaborations, projects, or questions about my work, email is the best way to reach me.
+          </p>
+          <div class="contact-row reveal">
+            <a class="contact-email" href="mailto:dmitry.rudshin@gmail.com" data-email>dmitry.rudshin@gmail.com</a>
+            <button class="copy-button copy-email" type="button" data-copy-text="dmitry.rudshin@gmail.com">Copy</button>
+          </div>
+          <ul class="contact-links reveal">
+            <li><a href="https://www.linkedin.com/in/dmitry-rudshin" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://github.com/Dmitrygm1" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
+            <li><a href="/model-space/">Model Space <span aria-hidden="true">↗</span></a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span data-year>2026</span> Dmitry Rudshin</p>
+        <p class="mono">Zurich · Built with Vite, hosted on GitHub Pages</p>
+        <a class="mono" href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  </body>
+</html>
