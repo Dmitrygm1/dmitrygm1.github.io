@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Model Space · AI model tradeoffs in 3D</title>
+    <meta
+      name="description"
+      content="Every Artificial Analysis Intelligence Index model placed by intelligence, cost per task, and time per task, with the Pareto frontier stretched between the best of them. By Dmitry Rudshin."
+    />
+    <meta name="author" content="Dmitry Rudshin" />
+    <meta name="theme-color" content="#0f1115" />
+    <link rel="canonical" href="https://dmitrygm1.github.io/model-space/" />
+    <link rel="icon" href="/model-space/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Model Space" />
+    <meta property="og:url" content="https://dmitrygm1.github.io/model-space/" />
+    <meta property="og:title" content="Model Space · AI model tradeoffs in 3D" />
+    <meta
+      property="og:description"
+      content="Every Artificial Analysis Intelligence Index model placed by intelligence, cost per task, and time per task, with the Pareto frontier stretched between the best of them."
+    />
+    <meta property="og:image" content="https://dmitrygm1.github.io/model-space/og.png" />
+    <meta property="og:image:width" content="1672" />
+    <meta property="og:image:height" content="941" />
+    <meta property="og:image:alt" content="Model Space 3D Pareto sheet" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Model Space · AI model tradeoffs in 3D" />
+    <meta name="twitter:image" content="https://dmitrygm1.github.io/model-space/og.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap"
+    />
+
+    <!-- Applies the theme before paint so there is no flash. Dark is the default. -->
+    <script>
+      var t = null;
+      try {
+        t = new URLSearchParams(location.search).get("theme") || localStorage.getItem("dr-theme");
+      } catch (e) {}
+      if (t !== "light") document.documentElement.dataset.theme = "dark";
+    </script>
+    <script type="module" crossorigin src="/assets/modelSpace-D21FWQQv.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/pareto-D0q48_XX.js">
+    <link rel="stylesheet" crossorigin href="/assets/modelSpace-CUHUVBnx.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding: 24px; font-family: system-ui, sans-serif">
+        Model Space is an interactive 3D visualization and needs JavaScript.
+        <a href="/">Back to Dmitry Rudshin's homepage</a>.
+      </p>
+    </noscript>
+  </body>
+</html>

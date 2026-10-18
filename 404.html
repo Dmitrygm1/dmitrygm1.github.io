@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found · Dmitry Rudshin</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap"
+    />
+    <script>
+      var light = false;
+      try {
+        light = localStorage.getItem("dr-theme") === "light";
+      } catch (e) {}
+      if (!light) document.documentElement.dataset.theme = "dark";
+    </script>
+    <style>:root{--lightningcss-light:initial;--lightningcss-dark: ;color-scheme:light;--bg:#f4f2ec;--ink:#111214;--ink-3:#676c75;--line:#1112141f;--accent:#4a6a00;--mark:#cdee459e}:root[data-theme=dark]{--lightningcss-light: ;--lightningcss-dark:initial;color-scheme:dark;--bg:#0b0c0e;--ink:#ecebe5;--ink-3:#8e929a;--line:#ecebe51f;--accent:#d2f04f;--mark:#d2f04f38}*{box-sizing:border-box}body{background:var(--bg);min-height:100svh;color:var(--ink);-webkit-font-smoothing:antialiased;text-align:center;place-items:center;margin:0;padding:32px 20px;font-family:Geist,system-ui,-apple-system,Segoe UI,Arial,sans-serif;display:grid}.code{letter-spacing:.1em;color:var(--accent);text-transform:uppercase;font-family:Geist Mono,ui-monospace,Consolas,monospace;font-size:12px}h1{letter-spacing:-.02em;margin:14px 0 0;font-family:Instrument Serif,Georgia,serif;font-size:clamp(3rem,10vw,6rem);font-weight:400;line-height:.95}h1 em{background:linear-gradient(transparent 62%, var(--mark) 62%, var(--mark) 90%, transparent 90%)}p{color:var(--ink-3);max-width:40ch;margin:20px auto 0;line-height:1.6}nav{flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px;display:flex}a{border:1px solid var(--line);min-height:44px;color:var(--ink);border-radius:999px;align-items:center;padding:0 20px;font-size:15px;text-decoration:none;display:inline-flex}a:first-child{background:var(--ink);color:var(--bg);border-color:var(--ink)}a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}</style>
+  </head>
+  <body>
+    <main>
+      <p class="code">Error 404</p>
+      <h1>This point is <em>off the map.</em></h1>
+      <p>The page you were looking for doesn't exist or has moved.</p>
+      <nav aria-label="Where to next">
+        <a href="/">Back home</a>
+        <a href="/model-space/">Model Space</a>
+      </nav>
+    </main>
+  </body>
+</html>
